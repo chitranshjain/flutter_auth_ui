@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutterauthui/LoginPage.dart';
 import 'package:flutterauthui/constants.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -36,7 +37,7 @@ class WelcomeScreen extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
                   Text(
-                    'Welcome',
+                    'WELCOME',
                     style: GoogleFonts.poppins(
                       fontWeight: FontWeight.w400,
                       textStyle: TextStyle(letterSpacing: 3, fontSize: 25.0),
@@ -60,7 +61,13 @@ class WelcomeScreen extends StatelessWidget {
                         padding: EdgeInsets.symmetric(
                             vertical: 15.0, horizontal: 40.0),
                         color: kPrimaryColor,
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => LoginPage()),
+                          );
+                        },
                         child: Text(
                           'LOGIN',
                           style: GoogleFonts.poppins(
