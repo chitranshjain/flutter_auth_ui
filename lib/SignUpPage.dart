@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:flutterauthui/SignUpPage.dart';
+import 'package:flutterauthui/LoginPage.dart';
 import 'package:flutterauthui/constants.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class LoginPage extends StatelessWidget {
+class SignUpPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -20,33 +20,33 @@ class LoginPage extends StatelessWidget {
                 top: 0,
                 left: 0,
                 child: Image.asset(
-                  'assets/images/main_top.png',
-                  width: size.width * 0.3,
+                  'assets/images/signup_top.png',
+                  width: size.width * 0.35,
                 ),
               ),
               Positioned(
                 bottom: 0,
-                right: 0,
+                left: 0,
                 child: Image.asset(
-                  'assets/images/login_bottom.png',
-                  width: size.width * 0.40,
+                  'assets/images/main_bottom.png',
+                  width: size.width * 0.25,
                 ),
               ),
               Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
                   Text(
-                    'LOGIN',
+                    'SIGN UP',
                     style: GoogleFonts.poppins(
                       fontWeight: FontWeight.w400,
                       textStyle: TextStyle(letterSpacing: 3, fontSize: 25.0),
                     ),
                   ),
                   SizedBox(
-                    height: size.height * 0.06,
+                    height: size.height * 0.04,
                   ),
                   SvgPicture.asset(
-                    'assets/icons/login.svg',
+                    'assets/icons/signup.svg',
                     height: size.height * 0.3,
                   ),
                   SizedBox(
@@ -107,7 +107,7 @@ class LoginPage extends StatelessWidget {
                         color: kPrimaryColor,
                         onPressed: () {},
                         child: Text(
-                          'LOGIN',
+                          'SIGN UP',
                           style: GoogleFonts.poppins(
                             fontWeight: FontWeight.w400,
                             textStyle: TextStyle(
@@ -126,7 +126,7 @@ class LoginPage extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
                       Text(
-                        'Don\'t have an Account?',
+                        'Already have an Account?',
                         style: GoogleFonts.poppins(
                           textStyle: TextStyle(
                               fontWeight: FontWeight.w400,
@@ -142,11 +142,11 @@ class LoginPage extends StatelessWidget {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => SignUpPage()),
+                                builder: (context) => LoginPage()),
                           );
                         },
                         child: Text(
-                          'Sign Up',
+                          'Sign In',
                           style: GoogleFonts.poppins(
                             textStyle: TextStyle(
                                 fontWeight: FontWeight.bold,
@@ -157,6 +157,101 @@ class LoginPage extends StatelessWidget {
                       )
                     ],
                   ),
+                  SizedBox(
+                    height: size.height * 0.02,
+                  ),
+                  Container(
+                    width: size.width * 0.75,
+                    child: Row(
+                      children: <Widget>[
+                        Expanded(
+                          child: Divider(
+                            color: Color(0xFFD9D9D9),
+                            height: 1.5,
+                          ),
+                        ),
+                        Text(
+                          'OR',
+                          style: GoogleFonts.poppins(
+                            textStyle: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                color: kPrimaryColor),
+                          ),
+                        ),
+                        Expanded(
+                          child: Divider(
+                            color: Color(0xFFD9D9D9),
+                            height: 1.5,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  SizedBox(
+                    height: size.height * 0.02,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      GestureDetector(
+                        onTap: () {},
+                        child: Container(
+                          padding: EdgeInsets.all(15),
+                          decoration: BoxDecoration(
+                            border:
+                                Border.all(color: kPrimaryLightColor, width: 2),
+                            shape: BoxShape.circle,
+                          ),
+                          child: SvgPicture.asset(
+                            'assets/icons/facebook.svg',
+                            color: kPrimaryColor,
+                            height: 25,
+                            width: 25,
+                          ),
+                        ),
+                      ),
+                      SizedBox(
+                        width: 15,
+                      ),
+                      GestureDetector(
+                        onTap: () {},
+                        child: Container(
+                          padding: EdgeInsets.all(15),
+                          decoration: BoxDecoration(
+                            border:
+                                Border.all(color: kPrimaryLightColor, width: 2),
+                            shape: BoxShape.circle,
+                          ),
+                          child: SvgPicture.asset(
+                            'assets/icons/google-plus.svg',
+                            color: kPrimaryColor,
+                            height: 25,
+                            width: 25,
+                          ),
+                        ),
+                      ),
+                      SizedBox(
+                        width: 15,
+                      ),
+                      GestureDetector(
+                        onTap: () {},
+                        child: Container(
+                          padding: EdgeInsets.all(15),
+                          decoration: BoxDecoration(
+                            border:
+                                Border.all(color: kPrimaryLightColor, width: 2),
+                            shape: BoxShape.circle,
+                          ),
+                          child: SvgPicture.asset(
+                            'assets/icons/twitter.svg',
+                            color: kPrimaryColor,
+                            height: 25,
+                            width: 25,
+                          ),
+                        ),
+                      ),
+                    ],
+                  )
                 ],
               ),
             ],
