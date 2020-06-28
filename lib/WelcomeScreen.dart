@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutterauthui/LoginPage.dart';
+import 'package:flutterauthui/SignUpPage.dart';
 import 'package:flutterauthui/constants.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -90,7 +91,13 @@ class WelcomeScreen extends StatelessWidget {
                         padding: EdgeInsets.symmetric(
                             vertical: 15.0, horizontal: 40.0),
                         color: kPrimaryLightColor,
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => SignUpPage()),
+                          );
+                        },
                         child: Text(
                           'SIGN UP',
                           style: GoogleFonts.poppins(
