@@ -1,19 +1,8 @@
-import 'package:equatable/equatable.dart';
-import 'package:flutter/cupertino.dart';
+abstract class LoginScreenBlocEvents {}
 
-abstract class LoginScreenBlocEvent extends Equatable {}
-
-class GoToLoginEvent extends LoginScreenBlocEvent {
-  @override
-  List<Object> get props => [];
-}
-
-class FormSubmittedEvent extends LoginScreenBlocEvent {
+class FormSubmittedEvent extends LoginScreenBlocEvents {
   String email;
   String password;
 
-  @override
-  List<Object> get props => [
-        {this.email, this.password}
-      ];
+  FormSubmittedEvent({this.email, this.password});
 }
